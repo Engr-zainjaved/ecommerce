@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, createContext, useState } from "react";
+import CardList from "./CardList";
+import { products } from "./products";
+import LoginPage from "./Login";
+import CartPage from "./CartPage";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const MyContext = createContext();
+
+const App = () => {
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        if ([null, "null", "undefined", undefined].includes(localStorage.getItem("user"))) {
+            localStorage.setItem("user", null)
+        }
+    }, [])
+
+    return (
+        <MyContext.Provider value={{ cart, setCart }}>
+            <Router>
+                <Routes>
+                    <>
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/" element={<CardList products={products} />} />
+                        <Route path="/cart" element={<CartPage />} />
+                        <Route path="*" element={
+                            <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+                                No Page Available: 404!
+                            </div>
+                        } />
+                    </>
+                </Routes>
+            </Router>
+        </MyContext.Provider>
+    );
 }
 
 export default App;

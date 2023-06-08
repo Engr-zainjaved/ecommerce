@@ -1,0 +1,19 @@
+.container{
+  position:relative;
+  width: 150px;
+  height: 150px;
+}
+
+.container img{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.1s;
+}
+
+.container #img2:hover{
+  opacity: 0;
+  cursor: pointer;
+}
