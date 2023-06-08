@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { MyContext } from './App';
 import NavBar from './NavBar';
 
@@ -17,8 +17,12 @@ const CartPage = () => {
     return (
         <div>
             <NavBar />
-            <h2>Shopping Cart</h2>
-            <table className='table'>
+            <h2 style={{ margin: "20px", padding: "20px" }}>Shopping Cart</h2>
+
+            <table
+                className='table container'
+                style={{}}
+            >
                 <thead>
                     <tr>
                         <td>Sr #</td>
@@ -30,11 +34,10 @@ const CartPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-
                     {cart && cart.length > 0 ? cart.map((item, key) => (
                         <tr>
                             <td>{key + 1}</td>
-                            <td><img alt='productImage' src={item.productLink} width="100" height="100" /></td>
+                            <td><img alt='productImage' src={item.productLink} style={{ width: "30px", height: "auto" }} /></td>
                             <td>{item.productTitle}</td>
                             <td>{item.price}</td>
                             <td>{item.quantity}</td>
@@ -49,27 +52,34 @@ const CartPage = () => {
                             </td>
                         </tr>
                     )) : <tr>
-                        <td colSpan={6}>No Item in th cart</td>
+                        <td colSpan={6}>No Item in the cart</td>
                     </tr>}
                 </tbody>
             </table>
 
-            <h3 style={{ display: 'inline-block', "margin-left": "20px" }}>Total Price: Rs. {calculateTotalPrice()}</h3>
-            <button
-                type="button"
-                class="btn btn-primary"
-                style={{ position: "absolute", right: "20px", "margin-right": "20px" }}
-                onClick={() => {
-                    if (cart.length === 0) {
-                        alert('Your Cart is Empty, Please add items to Cart');
-                    } else {
-                        alert('Thanks for Purchasing, Your Order on the Way');
-                    }
-                }}>
-                Checkout
-            </button>
+            <div id="cartContainer" style={{ display: "flex", alignItems: "center" }}>
+                {cart.length !== 0 && (
+                    <h3 style={{ display: 'inline-block', margin: "20px", padding: "20px" }}>
+                        Total Price: Rs. {calculateTotalPrice()}
+                    </h3>
+                )}
 
-        </div>
+                {cart.length !== 0 && (
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        style={{ position: "absolute", right: "20px", "margin-right": "20px" }}
+                        onClick={() => {
+                            alert("Thanks for Purchasing")
+                        }}>
+                        Checkout
+                    </button>
+                )}
+            </div>
+
+
+
+        </div >
     );
 };
 

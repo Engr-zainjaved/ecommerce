@@ -4,7 +4,11 @@ import Logo from "./Logo";
 
 const NavBar = () => {
     return (
-        <div>
+        <div style={
+            {
+                backgroundColor: "#F5F5F5",
+            }
+        }>
             <Logo />
             <AddToCart />
         </div>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Logo = ()=>{
 const navigate = useNavigate()
     return (
-        <div className="d-inline-block" style={{margin: "10px", padding: "10px"}} onClick={()=>{
+        <div className="d-inline-block" style={{margin: "10px", padding: "10px", textAlign: "center"}} onClick={()=>{
             navigate("/")
         }}>
             <img 

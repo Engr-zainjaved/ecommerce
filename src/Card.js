@@ -10,9 +10,11 @@ function Card({ item }) {
 
   return (
     <div className="text-center border d-inline-block rounded-3 p-3 m-2 shadow-sm"
-      style={{ width: '300px', height: '300px' }}>
+      style={{ width: '300px', height: '300px'}}>
 
-      <div className="container">
+      <div className="container"
+      style={{display: "flex", justifyContent: "center"}}
+      >
         <img src={`${productLink}`} alt="image1" id="img1" />
         <img src={`${productLink2}`} alt="image2" id="img2" />
       </div>

@@ -18,7 +18,7 @@ const AddToCart = () => {
         }}>
             <img
                 className="image-container"
-                style={{ width: '50px', height: '50px' }}
+                style={{ width: '40px', height: 'auto', display: "flex", alignItems: "end" }}
                 src="https://cdn-icons-png.flaticon.com/512/7640/7640465.png "
                 alt="add to cart logo"
             />

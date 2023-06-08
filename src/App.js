@@ -4,6 +4,7 @@ import { products } from "./products";
 import LoginPage from "./Login";
 import CartPage from "./CartPage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Banner from "./Banner";
 
 export const MyContext = createContext();
 
@@ -22,8 +23,13 @@ const App = () => {
                 <Routes>
                     <>
                         <Route path="/login" element={<LoginPage />} />
-                        <Route path="/" element={<CardList products={products} />} />
                         <Route path="/cart" element={<CartPage />} />
+                        <Route path="/" element={
+                            <>
+                                <Banner />
+                                <CardList products={products} />
+                            </>
+                        } />
                         <Route path="*" element={
                             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
                                 No Page Available: 404!
