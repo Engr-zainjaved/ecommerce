@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { MyContext } from "./App";
+import { MyContext } from "../../App";
 
 const AddToCart = () => {
     const { cart } = useContext(MyContext);

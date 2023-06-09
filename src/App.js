@@ -1,10 +1,10 @@
 import React, { useEffect, createContext, useState } from "react";
-import CardList from "./CardList";
-import { products } from "./products";
-import LoginPage from "./Login";
-import CartPage from "./CartPage";
+import CardList from "./Components/Card/CardList";
+import { products } from "./Data/Products/products";
+import LoginPage from "./Components/Login/Login";
+import CartPage from "./Components/Cart/CartPage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Banner from "./Banner";
+import Banner from "./Components/Banner/Banner";
 
 export const MyContext = createContext();
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { users } from "./users.js"
+import { users } from "../../Data/Users/users.js"
 
 const LoginPage = () => {
   const navigate = useNavigate()

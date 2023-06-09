@@ -1,6 +1,6 @@
 import React from "react";
-import AddToCart from "./AddToCart";
-import Logo from "./Logo";
+import AddToCart from "../Cart/AddToCart";
+import Logo from "../Logo/Logo";
 
 const NavBar = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { MyContext } from './App';
-import NavBar from './NavBar';
+import { MyContext } from '../../App';
+import NavBar from '../NavBar/NavBar';
 
 const CartPage = () => {
 
@@ -76,9 +76,6 @@ const CartPage = () => {
                     </button>
                 )}
             </div>
-
-
-
         </div >
     );
 };
